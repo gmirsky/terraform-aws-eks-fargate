@@ -3,7 +3,7 @@ resource "aws_subnet" "private-a" {
   cidr_block        = "10.0.0.0/19"
   availability_zone = "${var.region}a"
   tags = merge(
-    var.tags,
+    local.tags,
     {
       "Name"                                      = "private-${var.region}a"
       "kubernetes.io/role/internal-elb"           = "1"
@@ -18,7 +18,7 @@ resource "aws_subnet" "private-b" {
   availability_zone = "${var.region}b"
 
   tags = merge(
-    var.tags,
+    local.tags,
     {
       "Name"                                      = "private-${var.region}b"
       "kubernetes.io/role/internal-elb"           = "1"
@@ -33,7 +33,7 @@ resource "aws_subnet" "public-a" {
   availability_zone       = "${var.region}a"
   map_public_ip_on_launch = true
   tags = merge(
-    var.tags,
+    local.tags,
     {
       "Name"                                      = "public-${var.region}a"
       "kubernetes.io/role/elb"                    = "1"
@@ -49,7 +49,7 @@ resource "aws_subnet" "public-b" {
   map_public_ip_on_launch = true
 
   tags = merge(
-    var.tags,
+    local.tags,
     {
       "Name"                                      = "public-${var.region}b"
       "kubernetes.io/role/elb"                    = "1"

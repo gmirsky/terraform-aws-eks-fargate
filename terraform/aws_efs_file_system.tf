@@ -9,7 +9,7 @@ resource "aws_efs_file_system" "eks" {
   tags = merge({
     Name = "eks"
     },
-    var.tags
+    local.tags
   )
 }
 #

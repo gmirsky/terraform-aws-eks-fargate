@@ -5,7 +5,7 @@ resource "aws_route_table" "private" {
     nat_gateway_id = aws_nat_gateway.nat.id
   }
   tags = merge(
-    var.tags,
+    local.tags,
     {
       Name = "private"
     }
@@ -20,7 +20,7 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.igw.id
   }
   tags = merge(
-    var.tags,
+    local.tags,
     {
       Name = "public"
     }

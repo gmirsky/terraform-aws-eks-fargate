@@ -1,7 +1,7 @@
 resource "aws_eip" "nat" {
   vpc = true
   tags = merge(
-    var.tags,
+    local.tags,
     {
       Name = "nat"
     }
