@@ -28,3 +28,8 @@ output "vpc_cidr_block" {
   sensitive   = false
 }
 #
+output "tags" {
+  value       = local.tags
+  description = "consolidated common tags"
+  sensitive   = false
+}
