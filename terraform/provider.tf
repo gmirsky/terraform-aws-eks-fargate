@@ -19,3 +19,6 @@ provider "helm" {
   }
 }
 #
+provider "kubectl" {
+  apply_retry_count = 15
+}
