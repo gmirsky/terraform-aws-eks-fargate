@@ -22,7 +22,9 @@ kubectl \
 EOH
   }
   lifecycle {
-    ignore_changes = [triggers]
+    ignore_changes = [
+      triggers
+    ]
   }
 }
 #
