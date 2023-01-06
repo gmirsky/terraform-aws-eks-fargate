@@ -14,7 +14,7 @@ resource "helm_release" "metrics-server" {
 }
 # 
 resource "helm_release" "aws-load-balancer-controller" {
-  name = "aws-load-balancer-controller"
+  name       = "aws-load-balancer-controller"
   repository = "https://aws.github.io/eks-charts"
   chart      = "aws-load-balancer-controller"
   namespace  = "kube-system"
@@ -50,5 +50,5 @@ resource "helm_release" "aws-load-balancer-controller" {
   }
   depends_on = [
     aws_eks_fargate_profile.kube-system
-    ]
+  ]
 }
