@@ -8,10 +8,11 @@ vpc_enable_dns_hostnames = true
 
 #
 tags = {
-  project       = "Proof of Concept"
-  stack         = "POC"
-  environment   = "DEV"
-  technology    = "kubernetes"
-  contact_email = "no.one@mydomain.net"
+  project           = "Proof of Concept"
+  stack             = "POC"
+  environment       = "DEV"
+  technology        = "kubernetes"
+  contact_email     = "no.one@mydomain.net"
+  terraform_managed = true
 }
 #
