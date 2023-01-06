@@ -1,6 +1,6 @@
 resource "aws_subnet" "private-a" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.0.0/19"
+  cidr_block        = var.private-a-subnet-cidr
   availability_zone = "${var.region}a"
   tags = merge(
     local.tags,
@@ -14,9 +14,8 @@ resource "aws_subnet" "private-a" {
 #
 resource "aws_subnet" "private-b" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.32.0/19"
+  cidr_block        = var.private-b-subnet-cidr
   availability_zone = "${var.region}b"
-
   tags = merge(
     local.tags,
     {
@@ -29,7 +28,7 @@ resource "aws_subnet" "private-b" {
 #
 resource "aws_subnet" "public-a" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.64.0/19"
+  cidr_block              = var.public-a-subnet-cidr
   availability_zone       = "${var.region}a"
   map_public_ip_on_launch = true
   tags = merge(
@@ -44,10 +43,9 @@ resource "aws_subnet" "public-a" {
 #
 resource "aws_subnet" "public-b" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.0.96.0/19"
+  cidr_block              = var.public-b-subnet-cidr
   availability_zone       = "${var.region}b"
   map_public_ip_on_launch = true
-
   tags = merge(
     local.tags,
     {

@@ -5,7 +5,10 @@ vpc_name                 = "main-eks-vpc"
 vpc_cidr_block           = "10.0.0.0/16"
 vpc_enable_dns_support   = true
 vpc_enable_dns_hostnames = true
-
+private-a-subnet-cidr    = "10.0.0.0/19"
+private-b-subnet-cidr    = "10.0.32.0/19"
+public-a-subnet-cidr     = "10.0.64.0/19"
+ublic-b-subnet-cidr      = "10.0.96.0/19"
 #
 tags = {
   project           = "Proof of Concept"
