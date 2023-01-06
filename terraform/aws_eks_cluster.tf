@@ -9,10 +9,10 @@ resource "aws_eks_cluster" "cluster" {
       "0.0.0.0/0"
     ]
     subnet_ids = [
-      aws_subnet.private-us-east-1a.id,
-      aws_subnet.private-us-east-1b.id,
-      aws_subnet.public-us-east-1a.id,
-      aws_subnet.public-us-east-1b.id
+      aws_subnet.private-a.id,
+      aws_subnet.private-b.id,
+      aws_subnet.public-a.id,
+      aws_subnet.public-b.id
     ]
   }
   # depends upon may be deleted in the future when the AWS provider
