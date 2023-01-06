@@ -15,3 +15,16 @@ output "vpc_id" {
   description = "AWS VPC id"
   sensitive   = false
 }
+#
+output "vpc_arn" {
+  value       = aws_vpc.main.arn
+  description = "AWS VPC ARN"
+  sensitive   = false
+}
+#
+output "vpc_cidr_block" {
+  value       = aws_vpc.main.cidr_block
+  description = "AWS VPC CIDR block"
+  sensitive   = false
+}
+#
