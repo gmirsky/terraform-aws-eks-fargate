@@ -34,99 +34,99 @@ output "tags" {
   sensitive   = false
 }
 output "private-a-subnet-cidr" {
-  value = aws_subnet.private-a.cidr_block
+  value       = aws_subnet.private-a.cidr_block
   description = "AWS subnet private A CIDR block"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "private-b-subnet-cidr" {
-  value = aws_subnet.private-b.cidr_block
+  value       = aws_subnet.private-b.cidr_block
   description = "AWS subnet private B CIDR block"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "public-a-subnet-cidr" {
-  value = aws_subnet.public-a.cidr_block
+  value       = aws_subnet.public-a.cidr_block
   description = "AWS subnet public A CIDR block"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "public-b-subnet-cidr" {
-  value = aws_subnet.public-b.cidr_block
+  value       = aws_subnet.public-b.cidr_block
   description = "AWS subnet public B CIDR block"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "private-a-subnet-id" {
-  value = aws_subnet.private-a.id
+  value       = aws_subnet.private-a.id
   description = "AWS subnet private A id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "private-b-subnet-id" {
-  value = aws_subnet.private-b.id
+  value       = aws_subnet.private-b.id
   description = "AWS subnet private B id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "public-a-subnet-id" {
-  value = aws_subnet.public-a.id
+  value       = aws_subnet.public-a.id
   description = "AWS subnet public A id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "public-b-subnet-id" {
-  value = aws_subnet.public-b.id
+  value       = aws_subnet.public-b.id
   description = "AWS subnet public B id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_internet_gateway_id" {
-  value = aws_internet_gateway.igw.id
+  value       = aws_internet_gateway.igw.id
   description = "AWS internet gateway id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_internet_gateway_arn" {
-  value = aws_internet_gateway.igw.arn
+  value       = aws_internet_gateway.igw.arn
   description = "AWS internet gateway ARN"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_eks_cluster_endpoint" {
-  value = aws_eks_cluster.cluster.endpoint
+  value       = aws_eks_cluster.cluster.endpoint
   description = "AWS EKS cluster endpoint"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "kubeconfig-certificate-authority-data" {
-  value =  aws_eks_cluster.cluster.certificate_authority[0].data
+  value       = aws_eks_cluster.cluster.certificate_authority[0].data
   description = "kubeconfig certificate authority"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_efs_file_system_arn" {
-  value = aws_efs_file_system.eks.arn
+  value       = aws_efs_file_system.eks.arn
   description = "AWS EFS ARN"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_efs_file_system_id" {
-  value = aws_efs_file_system.eks.id
+  value       = aws_efs_file_system.eks.id
   description = "AWS EFS id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_efs_private_a_mount_target" {
-  value = aws_efs_mount_target.zone-a.mount_target_dns_name
+  value       = aws_efs_mount_target.zone-a.mount_target_dns_name
   description = "Private EFS zone-a mount target dns name"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_efs_private_b_mount_target" {
-  value = aws_efs_mount_target.zone-b.mount_target_dns_name
+  value       = aws_efs_mount_target.zone-b.mount_target_dns_name
   description = "Private EFS zone-b mount target dns name"
-  sensitive = false
+  sensitive   = false
 }
 #
 
