@@ -20,31 +20,31 @@ variable "vpc_cidr_block" {
 }
 #
 variable "private-a-subnet-cidr" {
-  type = string
+  type        = string
   description = "Private subnet A CIDR block"
-  default  = "10.0.0.0/19"
-  sensitive = false
+  default     = "10.0.0.0/19"
+  sensitive   = false
 }
 #
 variable "private-b-subnet-cidr" {
-  type = string
+  type        = string
   description = "Private subnet B CIDR block"
-  default  = "10.0.32.0/19"
-  sensitive = false
+  default     = "10.0.32.0/19"
+  sensitive   = false
 }
 #
 variable "public-a-subnet-cidr" {
-  type = string
+  type        = string
   description = "Public subnet A CIDR block"
-  default  = "10.0.64.0/19"
-  sensitive = false
+  default     = "10.0.64.0/19"
+  sensitive   = false
 }
 #
 variable "public-b-subnet-cidr" {
-  type = string
+  type        = string
   description = "public subnet B CIDR block"
-  default  = "10.0.96.0/19"
-  sensitive = false
+  default     = "10.0.96.0/19"
+  sensitive   = false
 }
 #
 variable "vpc_enable_dns_support" {
@@ -81,3 +81,18 @@ variable "tags" {
   sensitive   = false
 }
 #
+variable "aws_eks_cluster_endpoint_private_access" {
+  type        = bool
+  description = "AWS EKS endpoint private access?"
+  default     = true
+  sensitive   = false
+}
+#
+variable "aws_eks_cluster_endpoint_public_access" {
+  type        = bool
+  description = "AWS EKS endpoint public access?"
+  default     = false
+  sensitive   = false
+}
+#
+

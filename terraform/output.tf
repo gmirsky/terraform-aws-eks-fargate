@@ -89,6 +89,46 @@ output "aws_internet_gateway_id" {
 #
 output "aws_internet_gateway_arn" {
   value = aws_internet_gateway.igw.arn
+  description = "AWS internet gateway ARN"
+  sensitive = false
 }
 #
+output "aws_eks_cluster_endpoint" {
+  value = aws_eks_cluster.cluster.endpoint
+  description = "AWS EKS cluster endpoint"
+  sensitive = false
+}
+#
+output "kubeconfig-certificate-authority-data" {
+  value =  aws_eks_cluster.cluster.certificate_authority[0].data
+  description = "kubeconfig certificate authority"
+  sensitive = false
+}
+#
+output "aws_efs_file_system_arn" {
+  value = aws_efs_file_system.eks.arn
+  description = "AWS EFS ARN"
+  sensitive = false
+}
+#
+output "aws_efs_file_system_id" {
+  value = aws_efs_file_system.eks.id
+  description = "AWS EFS id"
+  sensitive = false
+}
+#
+output "aws_efs_private_a_mount_target" {
+  value = aws_efs_mount_target.zone-a.mount_target_dns_name
+  description = "Private EFS zone-a mount target dns name"
+  sensitive = false
+}
+#
+output "aws_efs_private_b_mount_target" {
+  value = aws_efs_mount_target.zone-b.mount_target_dns_name
+  description = "Private EFS zone-b mount target dns name"
+  sensitive = false
+}
+#
+
+
 
