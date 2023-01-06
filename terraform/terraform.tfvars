@@ -8,7 +8,7 @@ vpc_enable_dns_hostnames = true
 private-a-subnet-cidr    = "10.0.0.0/19"
 private-b-subnet-cidr    = "10.0.32.0/19"
 public-a-subnet-cidr     = "10.0.64.0/19"
-public-b-subnet-cidr      = "10.0.96.0/19"
+public-b-subnet-cidr     = "10.0.96.0/19"
 #
 tags = {
   project           = "Proof of Concept"
