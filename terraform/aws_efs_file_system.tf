@@ -5,8 +5,11 @@ resource "aws_efs_file_system" "eks" {
   encrypted        = true
   lifecycle_policy {
     transition_to_ia = "AFTER_30_DAYS"
+    # AFTER_1_DAY, AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, or AFTER_90_DAYS
+    transition_to_primary_storage_class = "AFTER_1_ACCESS"
   }
-  tags = merge({
+  tags = merge(
+    {
     Name = "eks"
     },
     local.tags

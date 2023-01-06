@@ -11,6 +11,7 @@ resource "aws_eks_fargate_profile" "kube-system" {
   selector {
     namespace = "kube-system"
   }
+  tags = local.tags
 }
 #
 resource "aws_eks_fargate_profile" "staging" {
@@ -26,5 +27,6 @@ resource "aws_eks_fargate_profile" "staging" {
   selector {
     namespace = "staging"
   }
+  tags = local.tags
 }
 #

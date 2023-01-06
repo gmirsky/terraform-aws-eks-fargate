@@ -1,5 +1,6 @@
 resource "aws_iam_role" "eks-cluster" {
   name               = "eks-cluster-${var.cluster_name}"
+  tags               = local.tags
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
@@ -18,6 +19,7 @@ POLICY
 #
 resource "aws_iam_role" "eks-fargate-profile" {
   name = "eks-fargate-profile"
+  tags = local.tags
   assume_role_policy = jsonencode(
     {
       Statement = [
@@ -35,6 +37,7 @@ resource "aws_iam_role" "eks-fargate-profile" {
 }
 #
 resource "aws_iam_role" "aws_load_balancer_controller" {
+  tags               = local.tags
   assume_role_policy = data.aws_iam_policy_document.aws_load_balancer_controller_assume_role_policy.json
   name               = "aws-load-balancer-controller"
 }

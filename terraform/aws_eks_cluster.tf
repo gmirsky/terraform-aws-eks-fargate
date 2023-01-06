@@ -20,4 +20,5 @@ resource "aws_eks_cluster" "cluster" {
   depends_on = [
     aws_iam_role_policy_attachment.amazon-eks-cluster-policy
   ]
+  tags = local.tags
 }
