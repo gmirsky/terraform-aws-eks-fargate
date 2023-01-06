@@ -24,3 +24,4 @@ variable "tags" {
   description = "Tags to be applied to the resources"
   sensitive   = false
 }
+#
