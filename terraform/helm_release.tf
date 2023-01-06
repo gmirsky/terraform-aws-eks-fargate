@@ -42,7 +42,7 @@ resource "helm_release" "aws-load-balancer-controller" {
   # EKS Fargate specific
   set {
     name  = "region"
-    value = var.region #"us-east-1"
+    value = var.region
   }
   set {
     name  = "vpcId"
