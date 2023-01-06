@@ -8,16 +8,22 @@ data "tls_certificate" "eks" {
 #
 data "aws_iam_policy_document" "aws_load_balancer_controller_assume_role_policy" {
   statement {
-    actions = ["sts:AssumeRoleWithWebIdentity"]
-    effect  = "Allow"
+    actions = [
+      "sts:AssumeRoleWithWebIdentity"
+    ]
+    effect = "Allow"
     condition {
       test     = "StringEquals"
       variable = "${replace(aws_iam_openid_connect_provider.eks.url, "https://", "")}:sub"
-      values   = ["system:serviceaccount:kube-system:aws-load-balancer-controller"]
+      values = [
+        "system:serviceaccount:kube-system:aws-load-balancer-controller"
+      ]
     }
     principals {
-      identifiers = [aws_iam_openid_connect_provider.eks.arn]
-      type        = "Federated"
+      identifiers = [
+        aws_iam_openid_connect_provider.eks.arn
+      ]
+      type = "Federated"
     }
   }
 }
