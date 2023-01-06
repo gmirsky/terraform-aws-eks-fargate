@@ -33,3 +33,62 @@ output "tags" {
   description = "consolidated common tags"
   sensitive   = false
 }
+output "private-a-subnet-cidr" {
+  value = aws_subnet.private-a.cidr_block
+  description = "AWS subnet private A CIDR block"
+  sensitive = false
+}
+#
+output "private-b-subnet-cidr" {
+  value = aws_subnet.private-b.cidr_block
+  description = "AWS subnet private B CIDR block"
+  sensitive = false
+}
+#
+output "public-a-subnet-cidr" {
+  value = aws_subnet.public-a.cidr_block
+  description = "AWS subnet public A CIDR block"
+  sensitive = false
+}
+#
+output "public-b-subnet-cidr" {
+  value = aws_subnet.public-b.cidr_block
+  description = "AWS subnet public B CIDR block"
+  sensitive = false
+}
+#
+output "private-a-subnet-id" {
+  value = aws_subnet.private-a.id
+  description = "AWS subnet private A id"
+  sensitive = false
+}
+#
+output "private-b-subnet-id" {
+  value = aws_subnet.private-b.id
+  description = "AWS subnet private B id"
+  sensitive = false
+}
+#
+output "public-a-subnet-id" {
+  value = aws_subnet.public-a.id
+  description = "AWS subnet public A id"
+  sensitive = false
+}
+#
+output "public-b-subnet-id" {
+  value = aws_subnet.public-b.id
+  description = "AWS subnet public B id"
+  sensitive = false
+}
+#
+output "aws_internet_gateway_id" {
+  value = aws_internet_gateway.igw.id
+  description = "AWS internet gateway id"
+  sensitive = false
+}
+#
+output "aws_internet_gateway_arn" {
+  value = aws_internet_gateway.igw.arn
+}
+#
+
