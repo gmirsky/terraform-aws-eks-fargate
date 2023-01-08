@@ -1,6 +1,13 @@
 data "aws_caller_identity" "current" {
 }
 #
+data "aws_partition" "current" {
+}
+#
+data "aws_kms_alias" "efs" {
+  name = "alias/aws/elasticfilesystem"
+}
+#
 data "aws_eks_cluster_auth" "eks" {
   name = aws_eks_cluster.cluster.id
 }
