@@ -15,6 +15,12 @@ resource "aws_eks_cluster" "cluster" {
       aws_subnet.public-b.id
     ]
   }
+  # encryption_config {
+  #   provider {
+  #     key_arn = aws_kms_key.eks-kms-key.arn
+  #   }
+  #   resources = ["secrets"]
+  # }
   # depends upon may be deleted in the future when the AWS provider
   # handles the deployment order as expected.
   depends_on = [
