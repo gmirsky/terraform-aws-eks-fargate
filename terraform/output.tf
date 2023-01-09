@@ -159,3 +159,15 @@ output "aws_caller_user" {
   sensitive   = false
 }
 #
+output "aws_kms_key_id_cloudwatch_logs" {
+  value = aws_kms_key.cloudwatch_logs.key_id
+  description = "AWS KMS key id for cloudwatch logs"
+  sensitive = false
+}
+#
+output "aws_kms_key_id_eks_secrets" {
+  value = aws_kms_key.eks_secrets.key_id
+  description = "AWS KMS key id for EKS secrets"
+  sensitive = false
+}
+#
