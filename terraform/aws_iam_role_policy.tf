@@ -14,7 +14,7 @@ resource "aws_iam_role_policy" "vpc_flow_logs" {
         "logs:DescribeLogStreams"
       ],
       "Effect": "Allow",
-      "Resource": "*"
+      "Resource": "arn:${data.aws_partition.current.partition}:logs:${var.region}:${data.aws_caller_identity.current.account_id}:*"
     }
   ]
 }
