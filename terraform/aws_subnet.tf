@@ -30,7 +30,7 @@ resource "aws_subnet" "public-a" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public-a-subnet-cidr
   availability_zone       = "${var.region}a"
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = true #tfsec:ignore:aws-ec2-no-public-ip-subnet
   tags = merge(
     local.tags,
     {
@@ -45,7 +45,7 @@ resource "aws_subnet" "public-b" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public-b-subnet-cidr
   availability_zone       = "${var.region}b"
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = true #tfsec:ignore:aws-ec2-no-public-ip-subnet
   tags = merge(
     local.tags,
     {
