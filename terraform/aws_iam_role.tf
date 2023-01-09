@@ -42,3 +42,22 @@ resource "aws_iam_role" "aws_load_balancer_controller" {
   name               = "aws-load-balancer-controller"
 }
 #
+resource "aws_iam_role" "vpc_flow_logs" {
+  name               = "vpc_flow_logs"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "vpc-flow-logs.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
+#
