@@ -171,3 +171,6 @@ output "aws_kms_key_id_eks_secrets" {
   sensitive = false
 }
 #
+# output "zzz_load_balancer_controller_iam_policy" {
+#   value = local.load_balancer_controller_iam_policy
+# }

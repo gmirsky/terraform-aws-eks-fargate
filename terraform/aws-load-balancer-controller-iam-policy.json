@@ -6,7 +6,7 @@
             "Action": [
                 "iam:CreateServiceLinkedRole"
             ],
-            "Resource": "*",
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*",
             "Condition": {
                 "StringEquals": {
                     "iam:AWSServiceName": "elasticloadbalancing.amazonaws.com"
@@ -40,7 +40,7 @@
                 "elasticloadbalancing:DescribeTargetHealth",
                 "elasticloadbalancing:DescribeTags"
             ],
-            "Resource": "*"
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*"
         },
         {
             "Effect": "Allow",
@@ -63,7 +63,7 @@
                 "shield:CreateProtection",
                 "shield:DeleteProtection"
             ],
-            "Resource": "*"
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*"
         },
         {
             "Effect": "Allow",
@@ -71,14 +71,14 @@
                 "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:RevokeSecurityGroupIngress"
             ],
-            "Resource": "*"
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*"
         },
         {
             "Effect": "Allow",
             "Action": [
                 "ec2:CreateSecurityGroup"
             ],
-            "Resource": "*"
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*"
         },
         {
             "Effect": "Allow",
@@ -144,7 +144,7 @@
                 "elasticloadbalancing:CreateRule",
                 "elasticloadbalancing:DeleteRule"
             ],
-            "Resource": "*"
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*"
         },
         {
             "Effect": "Allow",
@@ -189,7 +189,7 @@
                 "elasticloadbalancing:ModifyTargetGroupAttributes",
                 "elasticloadbalancing:DeleteTargetGroup"
             ],
-            "Resource": "*",
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*",
             "Condition": {
                 "Null": {
                     "aws:ResourceTag/elbv2.k8s.aws/cluster": "false"
@@ -213,7 +213,7 @@
                 "elasticloadbalancing:RemoveListenerCertificates",
                 "elasticloadbalancing:ModifyRule"
             ],
-            "Resource": "*"
+            "Resource": "arn:${partition}:logs:${region}:${account_id}:*"
         }
     ]
 }
