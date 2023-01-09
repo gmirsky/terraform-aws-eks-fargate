@@ -131,31 +131,31 @@ output "aws_efs_private_b_mount_target" {
 #
 output "aws_kms_alias_efs_id" {
   description = "AWS default KMS key for EFS"
-  value = data.aws_kms_alias.efs.id
-  sensitive = false
+  value       = data.aws_kms_alias.efs.id
+  sensitive   = false
 }
 #
 output "aws_partition" {
-  value = data.aws_partition.current.partition
+  value       = data.aws_partition.current.partition
   description = "AWS Partition"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_account_id" {
-  value = data.aws_caller_identity.current.account_id
+  value       = data.aws_caller_identity.current.account_id
   description = "AWS account id"
-  sensitive = false
+  sensitive   = false
 }
 #
 output "aws_caller_arn" {
-  value = data.aws_caller_identity.current.arn
+  value       = data.aws_caller_identity.current.arn
   description = "AWS caller user id"
-  sensitive = false
+  sensitive   = false
 }
 
 output "aws_caller_user" {
-  value = data.aws_caller_identity.current.user_id
+  value       = data.aws_caller_identity.current.user_id
   description = "AWS caller user (CLI key id)"
-  sensitive = false
+  sensitive   = false
 }
 #
